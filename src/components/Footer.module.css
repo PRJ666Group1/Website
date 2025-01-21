@@ -1,0 +1,52 @@
+/* src/components/Footer.module.css */
+
+.footer {
+    background-color: white; /* White background for the footer */
+    color: #6b6b6b; /* Grey text color */
+    padding: 16px; /* Padding for spacing */
+    text-align: center; /* Center the text */
+  }
+  
+  .navList {
+    display: flex; /* Ensures the links are in a row */
+    justify-content: center; /* Center the links */
+    gap: 1.5rem; /* Space between links */
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0; /* Removes the default padding of the list */
+    margin-bottom: 8px; /* Space below the links */
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #6b6b6b; /* Grey text for the links */
+    font-size: 1rem; /* Size for the links */
+    position: relative; /* Needed for the pseudo-element positioning */
+  }
+  
+  .link:hover {
+    text-decoration: underline; /* Underline effect on hover */
+  }
+  
+  .link::after {
+    content: '|'; /* Adds the separator */
+    color: rgb(129, 126, 126); /* White color for the separator */
+    margin-left: 1rem; /* Adds spacing between the link text and the separator */
+  }
+  
+  .navList li:last-child .link::after {
+    content: ''; /* Removes the separator from the last link */
+  }
+  
+  
+  .footerText {
+    margin-top: 16px; /* Space between the links and the text */
+    font-size: 1rem;
+    color: #6b6b6b;
+  }
+  
+  .copyright {
+    margin-top: 8px; /* Space between Seneca College and copyright text */
+    font-size: 0.875rem; /* Smaller font size for copyright */
+    color: #6b6b6b;
+  }
+  
