@@ -18,6 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   .page {
+    /* background-color: #333; Dark background for dark mode */
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
@@ -165,4 +166,85 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+
+/* ================================================================= */
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem; /* Space between the text and image */
+  padding: 4rem 0; /* Vertical padding */
+  background-color: #8ac97e; /* Light green olive */
+   /* background-color: #8ac97e;  */
+}
+
+.textContent {
+  flex: 1; /* Take up available space */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 2rem; /* Adds padding to center content from the left */
+  max-width: 600px; /* Optionally set a max width for the text */
+}
+
+.heading {
+  font-size: 2.5rem; /* Big text */
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.subheading {
+  font-size: 1.25rem; /* Smaller text */
+  color: #6b6b6b; /* Grey text color */
+  margin-top: 1rem;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem; /* Space between the buttons */
+}
+
+.getStarted {
+  background-color: #4e4c4c; /* Grey background */
+  color: #8ac97e; /* Light green olive */
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 12px; /* Less rounded edges */
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.learnMore {
+  background-color: transparent; /* Transparent background */
+  color: #6b6b6b; /* Grey text */
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 12px; /* Less rounded edges */
+  border: 2px solid #6b6b6b; /* Grey border */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.learnMore:hover,
+.getStarted:hover {
+  opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
+.imageContent {
+  flex: 1; /* Take up available space */
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%; /* Make the image responsive */
+  max-width: 500px; /* Limit the max width */
+  height: auto; /* Maintain aspect ratio */
 }
