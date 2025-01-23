@@ -190,6 +190,7 @@ a.secondary {
   justify-content: center;
   padding-left: 2rem; /* Adds padding to center content from the left */
   max-width: 600px; /* Optionally set a max width for the text */
+  margin-left: 8rem
 }
 
 .heading {
@@ -241,6 +242,7 @@ a.secondary {
   flex: 1; /* Take up available space */
   display: flex;
   justify-content: center;
+  margin-right: 6rem
 }
 
 .image {

@@ -7,6 +7,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <nav>
         <ul className={styles.navList}>
+        {/*
           <li>
             <Link href="#packages" className={styles.link}>
               Packages
@@ -17,16 +18,27 @@ const Footer = () => {
               Features
             </Link>
           </li>
+          */}
           <li>
-            <Link href="#about" className={styles.link}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="#contact" className={styles.link}>
-              Contact
-            </Link>
-          </li>
+              <Link href="/about" className={styles.link}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/download" className={styles.link}>
+                Download
+              </Link>
+            </li>
+            <li>
+              <Link href="/registration" className={styles.link}>
+                Registration
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className={styles.link}>
+                Contact
+              </Link>
+            </li>
         </ul>
       </nav>
       <div className={styles.footerText}>Seneca College</div>
