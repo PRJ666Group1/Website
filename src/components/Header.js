@@ -6,9 +6,13 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}> 
-        <h1 className={styles.title}>MoneyMap</h1>
+        <Link href="/">
+          <h1 className={styles.title}>MoneyMap</h1>
+        </Link>
+
         <nav className={styles.nav}> 
-          <ul className={styles.navList}>
+          <ul className={styles.navList}> 
+          {/**
             <li>
               <Link href="#packages" className={styles.link}>
                 Packages
@@ -19,13 +23,24 @@ const Header = () => {
                 Features
               </Link>
             </li>
+             */}
             <li>
-              <Link href="#about" className={styles.link}>
+              <Link href="/about" className={styles.link}>
                 About
               </Link>
             </li>
             <li>
-              <Link href="#contact" className={styles.link}>
+              <Link href="/download" className={styles.link}>
+                Download
+              </Link>
+            </li>
+            <li>
+              <Link href="/registration" className={styles.link}>
+                Registration
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className={styles.link}>
                 Contact
               </Link>
             </li>
