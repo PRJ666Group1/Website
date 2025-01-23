@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) <hr>
 
+## 2025-01-22
+### Added and Chanedg
+
+- updated nav links content and routes, created empty About & Download pages, re-aligned items on home page and added homepage links
+
 ## 2025-01-21
 ### Added 
 
