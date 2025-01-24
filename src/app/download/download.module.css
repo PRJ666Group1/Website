@@ -1,0 +1,117 @@
+
+.downloadContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0;
+    background-color: #F2F2F2;
+}
+
+
+.downloadText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 2rem;
+    max-width: 600px;
+    margin-left: 8rem;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4e8b07;
+}
+
+.subheading {
+    font-size: 1.25rem;
+    color: #4e8b07;
+    margin-top: 1rem;
+}
+
+
+.downloadButtons {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+
+.downloadButton img {
+    width: 180px;
+    height: auto; 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.downloadButton img:hover {
+    transform: scale(1.05);
+}
+
+
+.qrCode {
+    text-align: center;
+}
+
+.qrCode img {
+    width: 128px;
+    height: 128px;
+    object-fit: contain; 
+}
+
+
+.imageContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 6rem;
+}
+
+.imageContent img {
+    width: 100%;
+    max-width: 350px;
+    height: auto; 
+    object-fit: contain; 
+}
+
+
+@media (max-width: 768px) {
+    .downloadContainer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 2rem 1rem; 
+    }
+
+    .downloadText {
+        align-items: center;
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .downloadButtons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem; 
+    }
+
+ 
+    .qrCode {
+        margin-top: 1rem;
+    }
+
+
+    .imageContent {
+        margin-top: 2rem;
+    }
+
+    .imageContent img {
+        width: 250px; 
+    }
+}
+
