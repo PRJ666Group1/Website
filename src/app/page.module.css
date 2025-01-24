@@ -18,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   .page {
-    /* background-color: #333; Dark background for dark mode */
+    /* background-color: rgba(55, 55, 55, 1);  Dark background for dark mode */
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
@@ -171,6 +171,19 @@ a.secondary {
 
 /* ================================================================= */
 
+/* page.module.css */
+.hr {
+  border: none; /* Remove default border */
+  height: 0.5px; /* Set the height of the line */
+  background-color: rgba(55, 55, 55, 1);  /* Set the color of the line */
+  margin: 0px; /* Remove margin */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+
+
+/* Hero Section */
+
 
 .hero {
   display: flex;
@@ -179,6 +192,7 @@ a.secondary {
   gap: 2rem; /* Space between the text and image */
   padding: 4rem 0; /* Vertical padding */
   background-color: #8ac97e; /* Light green olive */
+  margin-bottom: 0;
    /* background-color: #8ac97e;  */
 }
 
@@ -196,12 +210,12 @@ a.secondary {
 .heading {
   font-size: 2.5rem; /* Big text */
   font-weight: bold;
-  color: #333; /* Dark text color */
+  color: rgba(55, 55, 55, 1);  /* Dark text color */
 }
 
 .subheading {
   font-size: 1.25rem; /* Smaller text */
-  color: #6b6b6b; /* Grey text color */
+  color: rgba(55, 55, 55, 1);  /* Grey text color */
   margin-top: 1rem;
 }
 
@@ -212,11 +226,11 @@ a.secondary {
 }
 
 .getStarted {
-  background-color: #4e4c4c; /* Grey background */
+  background-color: rgba(55, 55, 55, 1); /* Grey background */
   color: #8ac97e; /* Light green olive */
   font-size: 1rem;
   padding: 1rem 2rem;
-  border-radius: 12px; /* Less rounded edges */
+  border-radius: 25px; /* Less rounded edges */
   border: none;
   cursor: pointer;
   font-weight: bold;
@@ -224,11 +238,11 @@ a.secondary {
 
 .learnMore {
   background-color: transparent; /* Transparent background */
-  color: #6b6b6b; /* Grey text */
+  color: rgba(55, 55, 55, 1); 
   font-size: 1rem;
   padding: 1rem 2rem;
-  border-radius: 12px; /* Less rounded edges */
-  border: 2px solid #6b6b6b; /* Grey border */
+  border-radius: 25px;  /* Less rounded edges */
+  border: 2px solid rgba(55, 55, 55, 1); /* Grey border */
   cursor: pointer;
   font-weight: bold;
 }
@@ -242,11 +256,95 @@ a.secondary {
   flex: 1; /* Take up available space */
   display: flex;
   justify-content: center;
-  margin-right: 6rem
+  margin-right: 6rem;
+  
 }
 
 .image {
   width: 100%; /* Make the image responsive */
   max-width: 500px; /* Limit the max width */
-  height: auto; /* Maintain aspect ratio */
+  height: 400px; /* Maintain aspect ratio */
+}
+
+
+/* Features Section */
+
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+  text-align: center;
+  background-color: #8ac97e; 
+  margin-top: 0.2px; /* Remove extra margin */
+  padding-top: 4rem; /* Add padding to start the features section with spacing */
+  padding-bottom: 3rem;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.featureImage {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(213, 213, 97);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: rgba(55, 55, 55, 1); 
+}
+
+.featureText {
+  font-size: 1rem;
+  color: #6b6b6b;
+  margin-top: 0.5rem;
+  color: rgba(55, 55, 55, 1); 
+  text-align: center;
+}
+
+
+/* Download Section */
+
+
+/* Download Section */
+.downloadSection {
+  text-align: center;
+  margin: 50px 0;
+  background-color: #8ac97e; 
+  padding-top: 4rem; /* Adjust padding for better spacing */
+  padding-bottom: 4rem; /* Add bottom padding for balance */
+  width: 100%; /* Make sure it takes full width */
+  margin-top: 0; /* Remove extra margin */
+  margin-bottom: 0;
+  padding-top: 2rem; /* Add padding to start the features section with spacing */
+  
+}
+
+.downloadTitle {
+  font-weight: bold;
+  font-size: 2.5rem; /* Make the title bigger */
+  margin-bottom: 1.5rem; /* Space between title and image */
+  color: rgba(55, 55, 55, 1);  /* Ensure the text color contrasts well */
+}
+
+.downloadImageContainer {
+  display: block;
+  margin: 0 auto; /* Center the image container */
+  width: 80%; /* Adjust to take up 80% of the width */
+  max-width: 600px; /* Set a max width for the image */
+}
+
+.downloadImage {
+  width: 80px;
+  height: 80px;
 }
