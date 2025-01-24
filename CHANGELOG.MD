@@ -14,3 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 - Homepage, Header, Footer, initial pages & components setup
 
+## 2025-01-24
+### Added and Changed
+
+- Implemented the structured layout for the Download page with download buttons, QR code, and a phone mockup for the MoneyMap app.
