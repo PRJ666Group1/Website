@@ -1,0 +1,57 @@
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: -0.3rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.card {
+  background-color: var(--mantine-color-default);
+  border-radius: var(--mantine-radius-lg) 0px 0px var(--mantine-radius-lg);
+  padding: 0;
+  box-shadow: var(--mantine-shadow-md);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    border-radius: var(--mantine-radius-lg);
+  }
+}
+
+.primaryContainer {
+  flex-direction: row;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.formContainer {
+  flex: 1 1 50%;
+  max-width: 50%;
+  flex-direction: column;
+  padding: var(--mantine-spacing-lg);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: 100%;
+  }
+}
+
+/* flex={"1 1 50%"}
+  maw={mobile ? "" : "50%"}
+  mah={mobile ? "200px" : ""}
+  fit="cover" */
+
+.image {
+  flex: 1 1 50%;
+  max-width: 50%;
+  object-fit: cover;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: 100%;
+    max-height: 200px;
+  }
+}
