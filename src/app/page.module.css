@@ -231,7 +231,7 @@ a.secondary {
   font-size: 1rem;
   padding: 1rem 2rem;
   border-radius: 25px; /* Less rounded edges */
-  border: none;
+  border: 2px solid rgba(55, 55, 55, 1); /* Grey border */
   cursor: pointer;
   font-weight: bold;
 }
@@ -310,6 +310,7 @@ a.secondary {
   margin-top: 0.5rem;
   color: rgba(55, 55, 55, 1); 
   text-align: center;
+  width: 16rem;
 }
 
 
@@ -335,6 +336,11 @@ a.secondary {
   font-size: 2.5rem; /* Make the title bigger */
   margin-bottom: 1.5rem; /* Space between title and image */
   color: rgba(55, 55, 55, 1);  /* Ensure the text color contrasts well */
+}
+
+.downloadTitle:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
 }
 
 .downloadImageContainer {

@@ -59,13 +59,17 @@ export default function Home() {
         <hr className={styles.hr}/>
 
         <div className={styles.downloadSection}>
-          <h2 className={styles.downloadTitle}>Download the Desktop App for Free</h2>
+          <Link href="/download">
+            <h2 className={styles.downloadTitle}>Download the Desktop App for Free</h2>
+          </Link>
           <div className={styles.downloadImageContainer}>
-            <img 
-              src="/assets/download.svg" 
-              alt="Desktop App Image" 
-              className={styles.downloadImage} 
-            />
+            <Link href="/download">
+              <img 
+                src="/assets/download.svg" 
+                alt="Desktop App Image" 
+                className={styles.downloadImage} 
+              />
+            </Link>
           </div>
         </div>
 
