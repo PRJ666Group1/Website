@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   Container,
   Title,
@@ -17,8 +17,8 @@ import {
   Alert,
   List,
 } from "@mantine/core";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { set, useForm } from "react-hook-form";
 import NextLink from "next/link";
 
 import { IoInformationCircleOutline } from "@react-icons/all-files/io5/IoInformationCircleOutline";
@@ -36,17 +36,68 @@ export default function Registration() {
   } = useForm();
 
   const [warning, setWarning] = useState([]);
+  const [success, setSuccess] = useState(false);
 
-  function submitRegister(data) {
+  // Watch for changes in the form fields and clear warnings
+  useEffect(() => {
+    const subscription = watch(() => {
+      if (warning.length > 0) setWarning([]);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [watch, warning]);
+
+  async function submitRegister(data) {
     const { username, email, password, confirmPassword } = data;
 
-    if (password !== confirmPassword) {
-      setWarning(["Passwords do not match"]);
+    const errors = [];
+
+    if (password != confirmPassword) errors.push("Passwords do not match.");
+    if (username.length < 3) errors.push("Username must be at least 3 characters.");
+    if (password.length < 8) errors.push("Password must be at least 8 characters.");
+
+    if (errors.length > 0) {
+      setWarning(errors);
+      setSuccess(false);
       return;
     }
 
-    // Do something with the data
-    console.log(data);
+    // Prepare the data for the API request
+    const requestBody = {
+      username,
+      email,
+      password,
+    };
+
+    try {
+      // Send POST request to the registration API route
+      const response = await fetch("/api/user/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      // Check if the response is OK
+      if (!response.ok) {
+        const errorData = await response.json();
+        setWarning([errorData.error || "Something went wrong."]);
+        setSuccess(false);
+        return;
+      }
+
+      // Handle successful response
+      const data = await response.json();
+      console.log("User registered:", data);
+
+      setSuccess(true);
+      // Optionally, handle further actions (e.g., redirect, display success message)
+    } catch (error) {
+      console.error("Error submitting registration:", error);
+      setWarning(["An unexpected error occurred."]);
+      setSuccess(false);
+    }
   }
 
   return (
@@ -55,16 +106,26 @@ export default function Registration() {
       <Container size="md" mt="xl" mb="xl">
         {warning.length != 0 && (
           <Alert
-            title="Error"
+            title={success ? "Success!" : "Error"}
             icon={<IoInformationCircleOutline />}
             mb="md"
-            color="red"
+            color={success ? "green" : "red"}
             classNames={{ title: classes.title, icon: classes.icon }}>
             <List size="sm">
               {warning.map((warn, index) => (
                 <List.Item key={index}>{warn}</List.Item>
               ))}
             </List>
+          </Alert>
+        )}
+        {success && (
+          <Alert
+            title="Success!"
+            icon={<IoInformationCircleOutline />}
+            mb="md"
+            color="green"
+            classNames={{ title: classes.title, icon: classes.icon }}>
+            Your account has been created. You can now log in.
           </Alert>
         )}
 
