@@ -41,6 +41,7 @@
   
   .link:hover {
     text-decoration: underline; /* Underline effect on hover */
+    text-underline-offset: 2px;
   }
   
   .link::after {
