@@ -1,34 +1,37 @@
-// src/components/Header.js
+"use client";
+
+
 import Link from 'next/link';
-import styles from './Header.module.css';  // Import the CSS Module
+import { usePathname } from 'next/navigation'; // Import usePathname
+import styles from './Header.module.css';
 
 const Header = () => {
+  const pathname = usePathname(); // Get the current route
+
   return (
     <header className={styles.header}>
-      <div className={styles.container}> 
+      <div className={styles.container}>
         <Link href="/">
           <h1 className={styles.title}>MoneyMap</h1>
         </Link>
 
-        <nav className={styles.nav}> 
-          <ul className={styles.navList}> 
-          {/**
-            <li>
-              <Link href="#packages" className={styles.link}>
-                Packages
-              </Link>
-            </li>
-            <li>
-              <Link href="#features" className={styles.link}>
-                Features
-              </Link>
-            </li>
-             */}
-            <li>
-              <Link href="/about" className={styles.link}>
-                About
-              </Link>
-            </li>
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            {/* Hide the "About" link if the current route is /about */}
+            {pathname !== '/about' && (
+              <li>
+                <Link href="/about" className={styles.link}>
+                  About
+                </Link>
+              </li>
+            )}
+            {pathname !== '/' && (
+              <li>
+                <Link href="/" className={styles.link}>
+                  Home
+                </Link>
+              </li>
+            )}
             <li>
               <Link href="/download" className={styles.link}>
                 Download
