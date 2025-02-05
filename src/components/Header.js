@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Import usePathname
 import styles from './Header.module.css';
 import { Container } from "@mantine/core";
+import Image from 'next/image';
 
 const Header = () => {
   const pathname = usePathname(); // Get the current route
