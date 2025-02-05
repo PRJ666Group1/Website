@@ -4,16 +4,18 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Import usePathname
 import styles from './Header.module.css';
+import { Container } from "@mantine/core";
 
 const Header = () => {
   const pathname = usePathname(); // Get the current route
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
-        <Link href="/">
-          <h1 className={styles.title}>MoneyMap</h1>
-        </Link>
+        <div className={styles.container}>
+          <Link href="/">
+            {/* <h1 className={styles.title}>MoneyMap</h1> */}
+            <Image className={styles.logo} src="/assets/moneymap_logo.png" alt="MoneyMap" width={216} height={34} />
+          </Link>
 
         <nav className={styles.nav}>
           <ul className={styles.navList}>

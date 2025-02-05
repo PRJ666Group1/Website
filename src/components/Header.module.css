@@ -1,56 +1,55 @@
 /* src/components/Header.module.css */
 
 .header {
-    /* background-color: #8ac97e; Light green olive */
-    background-color: #8ac97e;
-    color: rgba(55, 55, 55, 1); /* Grey text */
-    padding: 16px; /* Add padding for spacing */
-    padding-top: 1.3rem;
-  }
-  
-  .container {
-    display: flex; /* This will ensure the content is aligned in one row */
-    justify-content: space-between; /* Distribute space between title and nav */
-    align-items: center; /* Align items vertically */
-  }
-  
-  .title {
-    font-size: 1.25rem; /* Text size for the MoneyMap title */
-    font-weight: bold;
-    margin-left: 5rem; /* Add left margin to MoneyMap title */
-  }
-  
-  .nav {
-    margin-right: 5rem; /* Add right margin to the navigation */
-  }
-  
-  .navList {
-    display: flex; /* Ensures the links are in a row */
-    gap: 2.5rem; /* Space between links */
-    list-style-type: none; /* Removes the bullet points */
-    padding: 0; /* Removes the default padding of the list */
-  }
-  
-  .link {
-    text-decoration: none;
-    color: rgba(55, 55, 55, 1);  /* Grey text for the links */
-    font-size: 1rem; /* Size for the links */
-    position: relative; /* Needed for the pseudo-element positioning */
-    font-weight: bold;
-  }
-  
-  .link:hover {
-    text-decoration: underline; /* Underline effect on hover */
-    text-underline-offset: 2px;
-  }
-  
-  .link::after {
-    content: '|'; /* Adds the separator */
-    color: #ffffff; /* White color for the separator */
-    margin-left: 2.5rem; /* Adds spacing between the link text and the separator */
-  }
-  
-  .navList li:last-child .link::after {
-    content: ''; /* Removes the separator from the last link */
-  }
-  
+  /* background-color: #8ac97e; Light green olive */
+  background-color: #8ac97e;
+  color: rgba(55, 55, 55, 1); /* Grey text */
+  padding: 16px 8rem 16px 8rem;
+  padding-top: 1.3rem;
+}
+
+.container {
+  display: flex; /* This will ensure the content is aligned in one row */
+  justify-content: space-between; /* Distribute space between title and nav */
+  align-items: center; /* Align items vertically */
+}
+
+.title {
+  font-size: 1.25rem; /* Text size for the MoneyMap title */
+  font-weight: bold;
+  margin-left: 5rem; /* Add left margin to MoneyMap title */
+}
+
+.nav {
+  margin-right: 0rem; /* Add right margin to the navigation */
+}
+
+.navList {
+  display: flex; /* Ensures the links are in a row */
+  gap: 2.5rem; /* Space between links */
+  list-style-type: none; /* Removes the bullet points */
+  padding: 0; /* Removes the default padding of the list */
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(55, 55, 55, 1); /* Grey text for the links */
+  font-size: 1rem; /* Size for the links */
+  position: relative; /* Needed for the pseudo-element positioning */
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline; /* Underline effect on hover */
+  text-underline-offset: 2px;
+}
+
+.link::after {
+  content: "|"; /* Adds the separator */
+  color: #ffffff; /* White color for the separator */
+  margin-left: 2.5rem; /* Adds spacing between the link text and the separator */
+}
+
+.navList li:last-child .link::after {
+  content: ""; /* Removes the separator from the last link */
+}
