@@ -53,7 +53,6 @@ export default function About() {
                         <li>Arad Fadaei </li>
                         <li>Arya Kavar</li>
                         <li>Vladislav Yatsenko</li>
-                        <li>Myles Hinds</li>
                         <li>Roma Amiri</li>
                         <li>Athul Anilkumar</li>
                     </ul>
