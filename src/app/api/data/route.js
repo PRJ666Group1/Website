@@ -1,19 +1,21 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import financialSummarySchema from "@/lib/schemas/financialSummary.js"
+import financialSummarySchema from "@/lib/schemas/financialSummary.js";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-
 export function OPTIONS() {
-  return NextResponse.json({}, {
-    status: 200,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization"
+  return NextResponse.json(
+    {},
+    {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      },
     }
-  });
+  );
 }
 
 export async function POST(req) {
@@ -54,7 +56,6 @@ export async function POST(req) {
         "Access-Control-Allow-Methods": "POST, OPTIONS",
       },
     });
-
   } catch (err) {
     console.error("OpenAI error:", err);
     return NextResponse.json(
